@@ -57,7 +57,7 @@ class GeoLocation(models.Model):
         ))
 
         result = urllib2.urlopen(request, timeout=2)  # 2 seconds
-        self._data = simplejson.load(result, use_decimal=True)
+        self._data = simplejson.load(result)
 
         try:
             results = self._data['results'][0]  # use first result
